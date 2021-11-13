@@ -1,5 +1,6 @@
 package com.HectorWare.pages;
 
+import com.HectorWare.utilities.ConfigurationReader;
 import com.HectorWare.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,5 +28,12 @@ public class LoginPage {
         passwordBox.sendKeys(password);
         loginButton.click();
     }
+
+    public void login(){
+        userBox.sendKeys(ConfigurationReader.get("username"));
+        passwordBox.sendKeys(ConfigurationReader.get("password"));
+        loginButton.click();
+    }
+
 
 }
