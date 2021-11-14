@@ -14,6 +14,9 @@ public class ContacInfoPage extends BasePage {
         PageFactory.initElements(Driver.get(),this);
     }
 
+    @FindBy(id = "new-contact-button")
+    public WebElement addNewContactButton;
+
     @FindBy(id="contact-fullname")
     public WebElement fullName;
 
@@ -51,7 +54,7 @@ public class ContacInfoPage extends BasePage {
     }
 
 
-@FindBy(xpath = "//*[@id=\"app-content-wrapper\"]/div[2]/section/div[6]/div/div[2]/div[2]/input")
+@FindBy(xpath = "(//input[@class=\"multiselect__input\"])[3]")
     public WebElement addNewProperty;
 
 }
