@@ -24,11 +24,7 @@ public class LoginPage {
     public WebElement loginButton;
 
 
-    public void login(String username, String password){
-        userBox.sendKeys(username);
-        passwordBox.sendKeys(password);
-        loginButton.click();
-    }
+
 
 
     public void loginWithUsername(String username){
@@ -40,10 +36,23 @@ public class LoginPage {
     }
 
     public void login(){
+        String username = System.getProperty("username")!=null ? System.getProperty("browser") : ConfigurationReader.get("username");
+        String password = System.getProperty("password")!=null ? System.getProperty("password") : ConfigurationReader.get("password");
+
         userBox.sendKeys(ConfigurationReader.get("username"));
         passwordBox.sendKeys(ConfigurationReader.get("password"));
+
         loginButton.click();
     }
+
+    public void login(String username,String password){
+
+        userBox.sendKeys(username);
+        passwordBox.sendKeys(password);
+        loginButton.click();
+    }
+
+
 
 
 

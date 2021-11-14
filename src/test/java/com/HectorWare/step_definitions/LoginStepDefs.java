@@ -18,7 +18,7 @@ public class LoginStepDefs {
 
     @When("the user enters username and password")
     public void the_user_enters_username_and_password() {
-        loginPage.login(ConfigurationReader.get("username"),ConfigurationReader.get("password"));
+        loginPage.login();
     }
 
     @Then("the user should login successfully to the main page")
@@ -32,7 +32,7 @@ public class LoginStepDefs {
         Driver.get().get(ConfigurationReader.get("url"));
 
         WebUtilities.waitFor(2);
-        loginPage.login(ConfigurationReader.get("username"), ConfigurationReader.get("password"));
+        loginPage.login();
 
         WebUtilities.waitFor(2);
         Assert.assertEquals("Files - Hectorware - QA", Driver.get().getTitle());
