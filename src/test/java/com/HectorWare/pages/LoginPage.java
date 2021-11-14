@@ -41,7 +41,7 @@ public class LoginPage {
 
         userBox.sendKeys(ConfigurationReader.get("username"));
         passwordBox.sendKeys(ConfigurationReader.get("password"));
-        
+
         loginButton.click();
     }
 
