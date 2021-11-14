@@ -9,22 +9,22 @@ import org.junit.Assert;
 
 public class LoginStepDefs {
 
+    LoginPage loginPage = new LoginPage();
+
     @Given("the user navigate to login page")
     public void the_user_navigate_to_login_page() {
-        // Write code here that turns the phrase above into concrete actions
-        ;
+        Driver.get().get(ConfigurationReader.get("url"));
     }
 
     @When("the user enters username and password")
     public void the_user_enters_username_and_password() {
-        // Write code here that turns the phrase above into concrete actions
-        ;
+        loginPage.login(ConfigurationReader.get("username"),ConfigurationReader.get("password"));
     }
 
     @Then("the user should login successfully to the main page")
     public void the_user_should_login_successfully_to_the_main_page() {
-        // Write code here that turns the phrase above into concrete actions
-        ;
+        String expectedTitle = "Files - Hectorware - QA";
+        Assert.assertEquals("Login to Base Page using conf.prop. credentials",expectedTitle,Driver.get().getTitle());
     }
 
     @Given("the user login with valid credentials")
@@ -32,12 +32,34 @@ public class LoginStepDefs {
         Driver.get().get(ConfigurationReader.get("url"));
 
         WebUtilities.waitFor(2);
-        LoginPage loginPage = new LoginPage();
         loginPage.login(ConfigurationReader.get("username"), ConfigurationReader.get("password"));
 
         WebUtilities.waitFor(2);
         Assert.assertEquals("Files - Hectorware - QA", Driver.get().getTitle());
-        ;
+
+    }
+
+    @Given("the user login with {string} as username")
+    public void theUserLoginWithAsUsername(String username) {
+        Driver.get().get(ConfigurationReader.get("url"));
+
+        WebUtilities.waitFor(2);
+        loginPage.loginWithUsername(username);
+        String expectedTitle = "Files - Hectorware - QA";
+        //System.out.println("expectedTitle = " + expectedTitle);
+        Assert.assertEquals("Login to base page title test",Driver.get().getTitle(),expectedTitle);
+    }
+    @When("the user enters {string} and {string}")
+    public void the_user_enters_and(String username, String password) {
+        loginPage.login(username, password);
+    }
+
+    @Then("the title should contain {string}")
+    public void the_title_should_contain(String string) {
+        String expectedTitle = "Hectorware - QA";
+        String actualPageTitle = Driver.get().getTitle();
+        //System.out.println("pageTitle = " + actualPageTitle);
+        Assert.assertEquals("Negative login test",expectedTitle,actualPageTitle);
     }
 
 }
