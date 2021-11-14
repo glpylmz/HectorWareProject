@@ -30,6 +30,7 @@ public class LoginPage {
         loginButton.click();
     }
 
+
     public void loginWithUsername(String username){
         userBox.sendKeys(username);
         passwordBox.sendKeys(ConfigurationReader.get("password"));
@@ -37,4 +38,13 @@ public class LoginPage {
         WebUtilities.waitForPageToLoad(5);
 
     }
+
+    public void login(){
+        userBox.sendKeys(ConfigurationReader.get("username"));
+        passwordBox.sendKeys(ConfigurationReader.get("password"));
+        loginButton.click();
+    }
+
+
+
 }
