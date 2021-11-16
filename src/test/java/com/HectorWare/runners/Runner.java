@@ -22,7 +22,6 @@ public class Runner {
 
 
 
-
 //==>        // dryRun = true   ===>   // dryRun we are checking loginstep Definetion if any step has implementation
 // yani diger methodlari (testleri) calistirmadan sadece defined mi degil mi kontrolunu yapiyor olmayani veriyor ki kopyala yapistir ile methodu olusturalim
 // ==>    tags = "@run"
