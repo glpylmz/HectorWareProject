@@ -34,12 +34,6 @@ public class ContacInfoPage extends BasePage {
    @FindBy(xpath = "//span[@title='All contacts']")
     public WebElement allContacts;
 
-  @FindBy(xpath = "(//button[@aria-label='Actions'])[6]")
-        public WebElement photoButton;
-        public void uploadNewPhoto ( int photoLocation){
-            photoButton.click();
-            Driver.get().findElement(By.xpath("(//span[@class='action-button__text'])[" + photoLocation + "]")).click();
-        }
 
 
          // (...) moreOption icon to delete a contact
@@ -70,7 +64,6 @@ public class ContacInfoPage extends BasePage {
 
         @FindBy(xpath = "(//input[@class='multiselect__input'])[3]")
         public WebElement addNewProperty;
-
         public void clickNewPropertySubTitle (String subTitle){
             addNewProperty.click();
             //WebUtilities.waitForClickablility(By.xpath("//div[@title='Birthday']"),10);
@@ -80,7 +73,7 @@ public class ContacInfoPage extends BasePage {
         }
 
 
-
+// contacts  sorted by some item such as surname or firts name
     @FindBy(css = ".settings-button")
     public WebElement settings;
     public void SortBy(String dropList) {
