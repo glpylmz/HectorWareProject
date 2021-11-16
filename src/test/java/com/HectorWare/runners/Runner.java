@@ -12,12 +12,15 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "com/HectorWare/step_definitions",
-        dryRun = false,
+        dryRun = true,
         tags = "@wip"
 )
 public class Runner {
 
 }
+
+
+
 
 
 //==>        // dryRun = true   ===>   // dryRun we are checking loginstep Definetion if any step has implementation

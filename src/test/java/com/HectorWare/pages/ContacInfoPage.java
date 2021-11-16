@@ -1,7 +1,9 @@
 package com.HectorWare.pages;
 
 import com.HectorWare.utilities.Driver;
+import com.HectorWare.utilities.WebUtilities;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -26,37 +28,65 @@ public class ContacInfoPage extends BasePage {
     @FindBy(id="contact-title")
     public  WebElement title;
 
-    @FindBy(className = "icon action-item__menutoggle icon-picture-force-white")
-    public  WebElement FotoButton;
+   @FindBy(linkText = "action-input__input focusable")
+   public WebElement CreateNewGroup;
 
-// (...) moreOption icon to delete a contact
-@FindBy(xpath = "(//*[@class=\"icon action-item__menutoggle action-item__menutoggle--default-icon\"])[5]")
-    public WebElement MoreOptionButton;
+   @FindBy(xpath = "//span[@title='All contacts']")
+    public WebElement allContacts;
 
-  @FindBy(xpath = "//ul[starts-with(@id,'menu-')]/li")
-      List<WebElement>dropDownFromMoreOption;
-
-    public void deleteContact(String optionFromMoreIcon){
-        MoreOptionButton.click();
-        switch (optionFromMoreIcon){
-            case "Download":
-                dropDownFromMoreOption.get(0).click();
-                break;
-            case "Generate QR Code":
-                dropDownFromMoreOption.get(1).click();
-                break;
-            case "Delete":
-                dropDownFromMoreOption.get(2).click();
-                break;
+  @FindBy(xpath = "(//button[@aria-label='Actions'])[6]")
+        public WebElement photoButton;
+        public void uploadNewPhoto ( int photoLocation){
+            photoButton.click();
+            Driver.get().findElement(By.xpath("(//span[@class='action-button__text'])[" + photoLocation + "]")).click();
         }
-        System.out.println("optionMoreIcon = " + optionFromMoreIcon);
-        Assert.fail("no such option under moreOption button");
+
+
+         // (...) moreOption icon to delete a contact
+
+        @FindBy(xpath = "(//button[@aria-label='Actions'])[7]")
+        public WebElement MoreOptionButton;
+        @FindBy(xpath = "//ul[starts-with(@id,'menu-')]/li")
+        List<WebElement> dropDownFromMoreOption;
+
+        public void clickMoreOptionSubTitle (String optionFromMoreIcon){
+            MoreOptionButton.click();
+            switch (optionFromMoreIcon) {
+                case "Download":
+                    dropDownFromMoreOption.get(0).click();
+                    break;
+                case "Generate QR Code":
+                    dropDownFromMoreOption.get(1).click();
+                    break;
+                case "Delete":
+                    dropDownFromMoreOption.get(2).click();
+                    break;
+            }
+            System.out.println("optionMoreIcon = " + optionFromMoreIcon);
+            Assert.fail("no such option under moreOption button");
+        }
+
+
+
+        @FindBy(xpath = "(//input[@class='multiselect__input'])[3]")
+        public WebElement addNewProperty;
+
+        public void clickNewPropertySubTitle (String subTitle){
+            addNewProperty.click();
+            //WebUtilities.waitForClickablility(By.xpath("//div[@title='Birthday']"),10);
+            Driver.get().findElement(By.xpath("//div[@title='" + subTitle + "']")).click();
+
+
+        }
+
+
+
+    @FindBy(css = ".settings-button")
+    public WebElement settings;
+    public void SortBy(String dropList) {
+        settings.click();
+        Driver.get().findElement(By.xpath(" //div[starts-with(@title,'Sort by'" + dropList + ")]")).click();
     }
-
-
-@FindBy(xpath = "(//input[@class=\"multiselect__input\"])[3]")
-    public WebElement addNewProperty;
-
-}
+    }
 
 
