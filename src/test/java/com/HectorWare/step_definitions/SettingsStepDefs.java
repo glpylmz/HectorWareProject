@@ -22,6 +22,6 @@ public class SettingsStepDefs {
 
     @Then("the user can see {string} on this page")
     public void the_user_can_see_on_this_page(String info) {
-        new SettingsPage().isInformationDispleyed( info);
+        Assert.assertTrue(new SettingsPage().informationTitle( info).isDisplayed());
     }
 }
