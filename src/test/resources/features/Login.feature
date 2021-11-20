@@ -1,6 +1,12 @@
-Feature: Users should be able to login successfully
+Feature:
 
-  @login
+	#US:
+	#As a user, I should be able to log in with valid credentials
+	#
+	#AC:
+	#All the users can log in with valid credentials
+  @WARE-375
+
   Scenario: Users should be able to login when correct credentials entered
     Given the user navigate to login page
     When the user enters username and password
@@ -9,11 +15,11 @@ Feature: Users should be able to login successfully
 
   Scenario: Login with valid credentials
     Given the user login with valid credentials
-
+  @wip
   Scenario: Login with valid username
     Given  the user login with "Employee123" as username
 
-  @wip
+
   Scenario Outline: Negative login
     Given the user navigate to login page
     When the user enters "<username>" and "<password>"
