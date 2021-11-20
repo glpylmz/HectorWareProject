@@ -1,14 +1,43 @@
 package com.HectorWare.pages;
 
 import com.HectorWare.utilities.Driver;
+import com.HectorWare.utilities.WebUtilities;
+import io.cucumber.java.bs.A;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 
 public class SettingsPage extends BasePage{
 
     public void navigateToSettings(){
         acoountOption("Settings");
+    }
+
+    @FindBy(xpath = "//button[.='Choose']")
+    public WebElement chooseButton;
+
+    @FindBy(id = "selectavatar")
+    public WebElement selectFromFileIcon;
+
+    @FindBy(id = "sendcropperbutton")
+    public WebElement chooseAsAProfilPictureButton;
+
+    @FindBy(id = "displayavatar")
+    public WebElement profilePictureAvatar;
+
+
+
+    public void choosePicture(String picName){
+        WebUtilities.waitFor(3);
+        WebElement profilePicture = Driver.get().findElement(By.xpath("//tr[contains(@data-entryname,'"+picName+"')]/td"));
+        profilePicture.click();
+
+        chooseButton.click();
+        WebUtilities.waitForClickablility(chooseAsAProfilPictureButton,15);
+        chooseAsAProfilPictureButton.click();
     }
 
     public WebElement informationTitle(String str){

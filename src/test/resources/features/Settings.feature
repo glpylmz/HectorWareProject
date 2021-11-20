@@ -21,4 +21,12 @@ Feature: the user can reach every personal information
       | Website      |
       | Twitter      |
 
+
+  @WARE-386
+  Scenario: User can change profile picture via clicking on "Select from files" icon
+    Given the user should be on settings page
+    When the user click on the Select from files button
+    And the user choose the "pic" from inside folder
+    Then the user should see user picture avatar on the page
+
 		        
