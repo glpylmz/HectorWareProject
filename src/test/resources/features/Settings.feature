@@ -24,9 +24,12 @@ Feature: the user can reach every personal information
 
   @WARE-386
   Scenario: User can change profile picture via clicking on "Select from files" icon
-    Given the user should be on settings page
     When the user click on the Select from files button
     And the user choose the "pic" from inside folder
     Then the user should see user picture avatar on the page
 
-		        
+  @WARE-387
+  Scenario: The User can upload a file after tried to upload wrong type of file
+    When the user click on the Upload new button and choose the "invalid" from computer
+    Then the user will see error message
+    When the user click on the Upload new button again

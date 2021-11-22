@@ -28,6 +28,15 @@ public class SettingsPage extends BasePage{
     @FindBy(id = "displayavatar")
     public WebElement profilePictureAvatar;
 
+    @FindBy(xpath = "//div[@id='displayavatar']/div[2]")
+    public WebElement uploadPictureWarningMessage;
+
+    @FindBy(xpath = "//input[@id = 'uploadavatar']")
+    public WebElement uploadNewPicturefromcomputer;
+
+    @FindBy(id = "uploadavatarbutton")
+    public WebElement uploadNewPictureButton;
+
 
 
     public void choosePicture(String picName){
