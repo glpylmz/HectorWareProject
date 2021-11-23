@@ -15,17 +15,27 @@ public class ContactStepsDef extends BasePage  {
 
     @Given("the user logs in with valid credentials")
     public void the_user_logs_in_with_valid_credentials() {
-        new LoginPage().login("Employee1","Employee123");
-
+        Driver.get().get(ConfigurationReader.get("url"));
+        WebUtilities.waitFor(2);
+        LoginPage loginPage=new LoginPage();
+        loginPage.login();
+        WebUtilities.waitFor(2);
     }
     @When("the user should be on Contact page")
     public void the_user_should_be_on_Contact_page() {
-        WebUtilities.waitForClickablility(contactsModule,10);
+        WebUtilities.waitFor(3);
+        new ContacInfoPage().navigateToModule("Contacts");
+
     }
 
     @Then("the New Contact page should be displayed")
     public void the_New_Contact_page_should_be_displayed() {
-        Assert.assertTrue(Driver.get().getTitle().contains("New Contact"));
+        WebUtilities.waitFor(3);
+        String expextedTitle="Contacts - Hectorware - QA";
+
+        String actualTitle=Driver.get().getTitle();
+
+        Assert.assertEquals(expextedTitle,actualTitle);
 
 
     }
