@@ -46,3 +46,4 @@ Feature: the user can reach every personal information
       | Email           |
       | Address         |
       | Twitter         |
+     
