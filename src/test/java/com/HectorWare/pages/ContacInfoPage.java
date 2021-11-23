@@ -15,6 +15,8 @@ public class ContacInfoPage extends BasePage {
 
         PageFactory.initElements(Driver.get(),this);
     }
+    @FindBy(xpath = "//li[@data-id = 'contacts']")
+    public WebElement contactsModule;
 
     @FindBy(id = "new-contact-button")
     public WebElement addNewContactButton;

@@ -35,6 +35,7 @@ public abstract class BasePage {
     @FindBy(xpath = "//li[@data-id = 'contacts']")
     public WebElement contactsModule;
 
+
     @FindBy(xpath = "//li[@data-id = 'calendar']")
     public WebElement calendarModule;
 
