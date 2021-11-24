@@ -29,6 +29,10 @@ public class ContacInfoPage extends BasePage {
 
     @FindBy(id="contact-title")
     public  WebElement title;
+    @FindBy(xpath = "//input[@inputmode='tel']")
+    public WebElement phoneNumber;
+    @FindBy(xpath = "//input[@inputmode='email']")
+    public WebElement email;
 
    @FindBy(linkText = "action-input__input focusable")
    public WebElement CreateNewGroup;

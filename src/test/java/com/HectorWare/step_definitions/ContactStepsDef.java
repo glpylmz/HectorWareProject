@@ -36,9 +36,8 @@ public class ContactStepsDef extends BasePage  {
         String actualTitle=Driver.get().getTitle();
 
         Assert.assertEquals(expextedTitle,actualTitle);
-
-
     }
+
 
 
 }

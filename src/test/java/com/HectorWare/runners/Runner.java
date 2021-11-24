@@ -12,8 +12,8 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/feature",
         glue = "com/HectorWare/step_definitions",
-        dryRun = false,
-        tags = "@wip"
+        dryRun = true,
+        tags = "@wip1"
 )
 public class Runner {
 
