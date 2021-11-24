@@ -38,6 +38,17 @@ public class ContactStepsDef extends BasePage  {
         Assert.assertEquals(expextedTitle,actualTitle);
     }
 
+// ADD new Contact
+    @Then("the User should  clic on  the {string} button")
+    public void the_User_should_clic_on_the_button(String string) {
+        new ContacInfoPage().addNewContactButton.click();
+
+    }
+    @Then("the user create a new contact with folowing information as {string} and {string}")
+    public void the_user_create_a_new_contact_with_folowing_information_as_and(String string, String string2) {
+
+    }
+
 
 
 }
