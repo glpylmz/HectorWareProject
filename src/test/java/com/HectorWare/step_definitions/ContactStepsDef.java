@@ -44,6 +44,7 @@ public class ContactStepsDef extends BasePage  {
         new ContacInfoPage().addNewContactButton.click();
 
     }
+
     @Then("the user create a new contact with folowing information as {string} and {string}")
     public void the_user_create_a_new_contact_with_folowing_information_as_and(String string, String string2) {
 
