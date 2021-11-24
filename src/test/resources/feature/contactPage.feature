@@ -22,7 +22,18 @@ Feature:Contact
 
   @wip2
      Scenario: add the new property
-     When the user should create a new property on contact page
+     When the user should create a new property(section) on contact page as "AddInput"
+       |AddInput    |
+       |Address     |
+       |Gender      |
+       |Location    |
+       |Birthday    |
+       |Date of death |
+       |Nickname    |
+       |Phone       |
+       |Anniversary |
+       |Email       |
+       |Website     |
       And the user should add adrress detatils on the created contact
       Then the user should create a group under Contact
        And the user should add the selected contact into the group
