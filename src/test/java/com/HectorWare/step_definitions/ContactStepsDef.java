@@ -6,10 +6,14 @@ import com.HectorWare.pages.LoginPage;
 import com.HectorWare.utilities.ConfigurationReader;
 import com.HectorWare.utilities.Driver;
 import com.HectorWare.utilities.WebUtilities;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+
+import java.util.List;
+import java.util.Map;
 
 public class ContactStepsDef extends BasePage  {
 
@@ -34,21 +38,42 @@ public class ContactStepsDef extends BasePage  {
         String expextedTitle="Contacts - Hectorware - QA";
 
         String actualTitle=Driver.get().getTitle();
-
         Assert.assertEquals(expextedTitle,actualTitle);
+
     }
 
-// ADD new Contact
     @Then("the User should  clic on  the {string} button")
-    public void the_User_should_clic_on_the_button(String string) {
+    public void theUserShouldClicOnTheButton(String arg0) {
+        WebUtilities.waitFor(2);
+
         new ContacInfoPage().addNewContactButton.click();
 
     }
 
-    @Then("the user create a new contact with folowing information as {string} and {string}")
-    public void the_user_create_a_new_contact_with_folowing_information_as_and(String string, String string2) {
+    @And("the user create a new contact information of {string} and{string} and{string} and{string} and {string}")
+    public void theUserCreateANewContactInformationOfAndAndAndAnd(String fullName, String CompanyName, String Title, String PhoneNumber, String Email) {
+        WebUtilities.waitFor(3);
+
+     ContacInfoPage contacInfoPage=new ContacInfoPage();
+     WebUtilities.waitFor(2);
+
+     contacInfoPage.fullName.clear();
+     contacInfoPage.fullName.sendKeys(fullName);
+
+        WebUtilities.waitFor(2);
+     contacInfoPage.companyName.sendKeys(CompanyName);
+        WebUtilities.waitFor(2);
+     contacInfoPage.title.sendKeys(Title);
+        WebUtilities.waitFor(2);
+     contacInfoPage.phoneNumber.sendKeys(PhoneNumber);
+
+        WebUtilities.waitFor(3);
+     contacInfoPage.email.sendKeys(Email);
 
     }
+
+
+
 
 
 

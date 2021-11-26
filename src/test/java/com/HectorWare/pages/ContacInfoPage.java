@@ -31,7 +31,8 @@ public class ContacInfoPage extends BasePage {
     public  WebElement title;
     @FindBy(xpath = "//input[@inputmode='tel']")
     public WebElement phoneNumber;
-    @FindBy(xpath = "//input[@inputmode='email']")
+
+    @FindBy(css = "input[inputmode='email']")
     public WebElement email;
 
    @FindBy(linkText = "action-input__input focusable")

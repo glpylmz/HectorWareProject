@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/feature",
         glue = "com/HectorWare/step_definitions",
-        dryRun = true,
+        dryRun = false,
         tags = "@wip1"
 )
 public class Runner {
