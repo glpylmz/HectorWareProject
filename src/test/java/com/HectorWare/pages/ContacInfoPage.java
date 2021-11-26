@@ -32,7 +32,7 @@ public class ContacInfoPage extends BasePage {
     @FindBy(xpath = "//input[@inputmode='tel']")
     public WebElement phoneNumber;
 
-    @FindBy(css = "input[inputmode='email']")
+    @FindBy(xpath = "//input[@inputmode='email']")
     public WebElement email;
 
    @FindBy(linkText = "action-input__input focusable")

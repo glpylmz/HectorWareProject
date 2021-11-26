@@ -69,6 +69,7 @@ public class ContactStepsDef extends BasePage  {
 
         WebUtilities.waitFor(3);
      contacInfoPage.email.sendKeys(Email);
+        WebUtilities.waitFor(3);
 
     }
 
