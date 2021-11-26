@@ -12,4 +12,12 @@ Feature:
 		Given the user login with valid credentials
 		When user clicks on profile avatar
 		Then user should see their online set status under their name
-		
+
+	@WARE-389
+	Scenario: User can change their online status
+
+		Given the user login with valid credentials
+		When user clicks on profile avatar
+		And user clicks on set status under their name
+		Then user should see a new window popped up
+		And user click on "away" status
