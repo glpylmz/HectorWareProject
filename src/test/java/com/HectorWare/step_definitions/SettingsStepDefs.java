@@ -85,4 +85,22 @@ public class SettingsStepDefs {
        new SettingsPage().uploadNewPicturefromcomputer.sendKeys("C:/Users/glpyl/Desktop/invalid.txt");
         WebUtilities.waitFor(5);
     }
+
+    @Then("the title should contain {string}")
+    public void the_title_should_contain(String string) {
+        String expectedTitle = "Hectorware - QA";
+        String actualPageTitle = Driver.get().getTitle();
+        //System.out.println("pageTitle = " + actualPageTitle);
+        Assert.assertEquals("Negative login test",expectedTitle,actualPageTitle);
+    }
+
+    @Then("the user can change the visibility of {string}")
+    public void the_user_can_change_the_visibility_of(String string) {
+        new SettingsPage().informationvisibility(string).click();
+        WebUtilities.waitFor(2);
+        new SettingsPage().visibilityOption(string,"public").click();
+        WebUtilities.waitFor(2);
+        Assert.assertTrue(new SettingsPage().informationTitle(string).isDisplayed());
+
+    }
 }

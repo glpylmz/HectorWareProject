@@ -9,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class SettingsPage extends BasePage{
 
@@ -39,6 +40,8 @@ public class SettingsPage extends BasePage{
 
 
 
+
+
     public void choosePicture(String picName){
         WebUtilities.waitFor(3);
         WebElement profilePicture = Driver.get().findElement(By.xpath("//tr[contains(@data-entryname,'"+picName+"')]/td"));
@@ -49,9 +52,13 @@ public class SettingsPage extends BasePage{
         chooseAsAProfilPictureButton.click();
     }
 
-    public WebElement informationTitle(String str){
+    public WebElement informationTitle(String str) {
         String path = "";
+
         switch (str) {
+            case "Profile picture":
+                path = "(//div[@id='personal-settings']//form)[1]";
+                break;
             case "Avatar":
                 path = "(//div[@id='personal-settings']//form)[1]";
                 break;
@@ -63,6 +70,7 @@ public class SettingsPage extends BasePage{
                 break;
             case "Language":
                 path = "(//div[@id='personal-settings']//form)[8]";
+
                 break;
             case "Phone number":
                 path = "(//div[@id='personal-settings']//form)[4]";
@@ -83,10 +91,19 @@ public class SettingsPage extends BasePage{
             default:
                 System.out.println("invalid information title");
         }
+
         return Driver.get().findElement(By.xpath(path));
+    }
+
+    public WebElement informationvisibility(String str) {
+        return Driver.get().findElement(By.xpath("//label[.='"+str+"']/../div"));
+    }
+
+    public WebElement visibilityOption(String string,String visibility){
+        return Driver.get().findElement(By.xpath("//label[.='"+string+"']/../div//a[@data-action='"+visibility+"']"));
+    }
 
 
-        }
 
 
 }

@@ -33,3 +33,17 @@ Feature: the user can reach every personal information
     When the user click on the Upload new button and choose the "invalid" from computer
     Then the user will see error message
     When the user click on the Upload new button again
+
+  @WARE-390
+  Scenario Outline: User can change visibility for <input>
+    Then the user can change the visibility of "<input>"
+    Examples:
+      | input          |
+      | Profile picture |
+      | Full name       |
+      | Phone number    |
+      | Website         |
+      | Email           |
+      | Address         |
+      | Twitter         |
+     
