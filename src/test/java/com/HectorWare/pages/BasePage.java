@@ -12,9 +12,8 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public abstract class BasePage {
-    public BasePage() {
-        PageFactory.initElements(Driver.get(), this);
-    }
+
+    public BasePage() {PageFactory.initElements(Driver.get(), this);}
 
     @FindBy(xpath = "(//*[@class = 'app-icon'])[1]")
     public WebElement fileModule;
