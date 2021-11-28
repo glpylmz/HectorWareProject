@@ -22,7 +22,6 @@ public class UploadFileStepDefs extends UploadFilePage {
 
     @When("the user can upload a file by clicking the upload file")
     public void the_user_can_upload_a_file_by_clicking_the_upload_file() {
-        //try "wait for clickbality" and catch "assertfail"
         uploadFile.sendKeys("C:\\Users\\wodaf\\OneDrive\\Desktop\\happyfile.txt");
 
 

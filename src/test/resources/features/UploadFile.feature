@@ -1,4 +1,4 @@
-Feature: 
+Feature: User should upload file
 
 	Background:
 		Given the user navigate to login page
