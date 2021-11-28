@@ -42,6 +42,7 @@ public class OnlineStatusDefs extends BasePage {
 
     @And("user choose {string} status")
     public void userChooseStatus(String expected) {
+
         WebUtilities.waitFor(2);
         new OnlineStatusPage().selectionOfStatusMessage(expected);
     }

@@ -29,6 +29,7 @@ public class OnlineStatusPage extends BasePage {
     @FindBy(xpath = "//div/span[@class='predefined-status__message']")
     public List<WebElement>statusMessage;
 
+
     public void selectionOfStatusMessage(String expected){
         if(expected.equals("In a meeting")){
             statusMessage.get(0).click();
