@@ -1,5 +1,6 @@
 package com.HectorWare.step_definitions;
 
+import com.HectorWare.pages.BasePage;
 import com.HectorWare.pages.LoginPage;
 import com.HectorWare.pages.SettingsPage;
 import com.HectorWare.utilities.ConfigurationReader;

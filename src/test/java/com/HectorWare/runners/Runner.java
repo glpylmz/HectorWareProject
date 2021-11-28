@@ -1,6 +1,4 @@
 package com.HectorWare.runners;
-
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -13,15 +11,10 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/HectorWare/step_definitions",
         dryRun = false,
-
-        tags = "@WARE-390"
-
-
-)
+        tags = "@ela"
+ )
 public class Runner {
-
 }
-
 
 //==>        // dryRun = true   ===>   // dryRun we are checking loginstep Definetion if any step has implementation
 // yani diger methodlari (testleri) calistirmadan sadece defined mi degil mi kontrolunu yapiyor olmayani veriyor ki kopyala yapistir ile methodu olusturalim
