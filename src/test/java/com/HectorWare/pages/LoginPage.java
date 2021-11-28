@@ -27,6 +27,7 @@ public class LoginPage {
 
 
 
+
     public void loginWithUsername(String username){
         userBox.sendKeys(username);
         passwordBox.sendKeys(ConfigurationReader.get("password"));
@@ -36,13 +37,15 @@ public class LoginPage {
     }
 
     public void login(){
-        String username = System.getProperty("username")!=null ? System.getProperty("browser") : ConfigurationReader.get("username");
+
+        String username = System.getProperty("username")!=null ? System.getProperty("username") : ConfigurationReader.get("username");
         String password = System.getProperty("password")!=null ? System.getProperty("password") : ConfigurationReader.get("password");
 
         userBox.sendKeys(ConfigurationReader.get("username"));
         passwordBox.sendKeys(ConfigurationReader.get("password"));
 
         loginButton.click();
+
     }
 
     public void login(String username,String password){

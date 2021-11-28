@@ -1,6 +1,7 @@
 package com.HectorWare.step_definitions;
 
 import com.HectorWare.pages.LoginPage;
+import com.HectorWare.pages.SettingsPage;
 import com.HectorWare.utilities.ConfigurationReader;
 import com.HectorWare.utilities.Driver;
 import com.HectorWare.utilities.WebUtilities;
@@ -54,12 +55,7 @@ public class LoginStepDefs {
         loginPage.login(username, password);
     }
 
-    @Then("the title should contain {string}")
-    public void the_title_should_contain(String string) {
-        String expectedTitle = "Hectorware - QA";
-        String actualPageTitle = Driver.get().getTitle();
-        //System.out.println("pageTitle = " + actualPageTitle);
-        Assert.assertEquals("Negative login test",expectedTitle,actualPageTitle);
-    }
+
+
 
 }
