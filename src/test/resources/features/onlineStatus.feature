@@ -21,3 +21,13 @@ Feature:
 		And user clicks on set status under their name
 		Then user should see a new window popped up
 		And user click on "away" status
+
+
+	@WARE-405
+	Scenario:User can set a status message
+
+		Given the user login with valid credentials
+		When user clicks on profile avatar
+		And user clicks on set status under their name
+		Then user should see a new window popped up
+		And user choose "In a meeting" status
