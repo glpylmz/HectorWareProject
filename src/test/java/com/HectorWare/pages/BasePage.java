@@ -12,9 +12,8 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public abstract class BasePage {
-    public BasePage() {
-        PageFactory.initElements(Driver.get(), this);
-    }
+
+    public BasePage() {PageFactory.initElements(Driver.get(), this);}
 
     @FindBy(xpath = "(//*[@class = 'app-icon'])[1]")
     public WebElement fileModule;
@@ -27,7 +26,6 @@ public abstract class BasePage {
 
     @FindBy(xpath = "//li[@data-id = 'spreed']")
     public WebElement talkModule;
-
 
     @FindBy(xpath = "//li[@data-id = 'mail']")
     public WebElement mailModule;
@@ -50,10 +48,8 @@ public abstract class BasePage {
     @FindBy(id = "contactsmenu")
     public WebElement contacts;
 
-
     @FindBy(id = "contactsmenu-search")
     public WebElement searchContact;
-
 
     public void navigateToModule(String module) {
         String moduleLink = "//*[@aria-label='" + module + "']";

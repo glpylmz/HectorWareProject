@@ -11,11 +11,14 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
 
+import java.util.concurrent.TimeUnit;
+
 public class Hooks {
     @Before
     public void setUp(){
-        Driver.get().manage().window().maximize();
-        Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+     Driver.get().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+     Driver.get().manage().window().maximize();
 
     }
     @After
