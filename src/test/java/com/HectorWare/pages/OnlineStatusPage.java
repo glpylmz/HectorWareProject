@@ -25,4 +25,22 @@ public class OnlineStatusPage extends BasePage {
             statusSelection.get(3).click();
         }
     }
+
+    @FindBy(xpath = "//div/span[@class='predefined-status__message']")
+    public List<WebElement>statusMessage;
+
+
+    public void selectionOfStatusMessage(String expected){
+        if(expected.equals("In a meeting")){
+            statusMessage.get(0).click();
+        }else if(expected.equals("Commuting")){
+            statusMessage.get(1).click();
+        }else if(expected.equals("Working remotely")){
+            statusMessage.get(2).click();
+        }else if(expected.equals("Out sick")){
+            statusMessage.get(3).click();
+        }else{
+            statusMessage.get(4).click();
+        }
+    }
 }
