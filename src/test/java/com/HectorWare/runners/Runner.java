@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         glue = "com/HectorWare/step_definitions",
         dryRun = false,
         
-        tags = "@WARE-394"
+        tags = "@WARE-405"
 
         
 
