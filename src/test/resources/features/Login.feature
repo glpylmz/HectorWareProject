@@ -15,7 +15,7 @@ Feature:
 
   Scenario: Login with valid credentials
     Given the user login with valid credentials
-  @wip
+
   Scenario: Login with valid username
     Given  the user login with "Employee123" as username
 
